@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scenes/Spawner.gd" id="6_ca7ug"]
 [ext_resource type="PackedScene" uid="uid://x42kkxvqh2jk" path="res://scenes/FishFall.tscn" id="7_rl8kk"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68s5h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilxym"]
 texture = ExtResource("2_mobju")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -30,7 +30,7 @@ texture_region_size = Vector2i(128, 128)
 7:1/0 = 0
 8:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lxvx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rxxfr"]
 texture = ExtResource("3_cuphh")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -73,8 +73,8 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_xlbpq"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_68s5h")
-sources/1 = SubResource("TileSetAtlasSource_3lxvx")
+sources/0 = SubResource("TileSetAtlasSource_ilxym")
+sources/1 = SubResource("TileSetAtlasSource_rxxfr")
 
 [node name="Level1" type="Node2D"]
 

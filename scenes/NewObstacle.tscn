@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc3vlxayrdtep"]
+
+[ext_resource type="PackedScene" uid="uid://c2itibsqcrugq" path="res://scenes/area_2d.tscn" id="1_7we3c"]
+[ext_resource type="Script" path="res://scenes/new_obstacle.gd" id="1_m2j5f"]
+[ext_resource type="Texture2D" uid="uid://u1jtuxja80pp" path="res://assets/kenney_platformerpack/PNG/Enemies/barnacle.png" id="2_um2ba"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eneki"]
+radius = 13.0
+height = 50.0
+
+[node name="NewObstacle" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_m2j5f")
+
+[node name="Area2D" parent="." instance=ExtResource("1_7we3c")]
+position = Vector2(0, -4)
+scale = Vector2(2.1, 2.6)
+sceneName = "LoseScreen"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_um2ba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_eneki")

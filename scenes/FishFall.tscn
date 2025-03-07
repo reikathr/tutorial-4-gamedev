@@ -5,18 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://c2itibsqcrugq" path="res://scenes/area_2d.tscn" id="2_fi488"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nqbcf"]
-radius = 28.0
-height = 96.0
+radius = 13.0
+height = 58.0
 
 [node name="FishFall" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_navcf")
 
 [node name="Area2D" parent="." instance=ExtResource("2_fi488")]
-scale = Vector2(4, 5)
+scale = Vector2(2.2, 3)
 sceneName = "LoseScreen"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_0rgc5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
