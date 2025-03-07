@@ -13,5 +13,6 @@ offset_bottom = 1000.0
 scale = Vector2(0.9, 0.9)
 texture_normal = ExtResource("1")
 script = ExtResource("2_fqxsf")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

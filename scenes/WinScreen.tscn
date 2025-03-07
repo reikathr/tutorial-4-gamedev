@@ -1,7 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://u2nrd7bgu4n7"]
 
-[ext_resource path="res://Assets/Keanu.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://d0xi3jghkp5hk" path="res://assets/Keanu.png" id="1_yl7x2"]
+[ext_resource type="Script" path="res://scenes/win_button.gd" id="2_s8dq7"]
 
-[node name="WinScreen" type="Sprite2D"]
-position = Vector2( 512.329, 294.151 )
-texture = ExtResource( 1 )
+[node name="WinScreen" type="Node2D"]
+position = Vector2(512.329, 294.151)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -531.329
+offset_top = -297.151
+offset_right = 868.671
+offset_bottom = 752.849
+scale = Vector2(1.15, 1.15)
+texture_normal = ExtResource("1_yl7x2")
+script = ExtResource("2_s8dq7")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
