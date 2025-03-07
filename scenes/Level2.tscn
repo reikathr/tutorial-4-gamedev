@@ -114,6 +114,7 @@ sceneName = "WinScreen"
 [node name="Area2D" parent="." instance=ExtResource("5_00vcl")]
 position = Vector2(1127, 704)
 scale = Vector2(150, 6)
+sceneName = "Level2"
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(872, -255)
