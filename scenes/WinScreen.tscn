@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://u2nrd7bgu4n7"]
 
 [ext_resource type="Texture2D" uid="uid://d0xi3jghkp5hk" path="res://assets/Keanu.png" id="1_yl7x2"]
-[ext_resource type="Script" path="res://scenes/win_button.gd" id="2_s8dq7"]
+[ext_resource type="Script" path="res://scripts/win_button.gd" id="2_s8dq7"]
 
 [node name="WinScreen" type="Node2D"]
 position = Vector2(512.329, 294.151)

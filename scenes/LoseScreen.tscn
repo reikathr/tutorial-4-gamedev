@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd0iuy8cgvcqh"]
 
 [ext_resource type="Texture2D" uid="uid://bi5p7hlw4wlhv" path="res://assets/dead.jpg" id="1"]
-[ext_resource type="Script" path="res://scenes/lose_button.gd" id="2_fqxsf"]
+[ext_resource type="Script" path="res://scripts/lose_button.gd" id="2_fqxsf"]
 
 [node name="LoseScreen" type="Node2D"]
 
@@ -13,6 +13,7 @@ offset_bottom = 1000.0
 scale = Vector2(0.9, 0.9)
 texture_normal = ExtResource("1")
 script = ExtResource("2_fqxsf")
+sceneName = "ui/MainMenu"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

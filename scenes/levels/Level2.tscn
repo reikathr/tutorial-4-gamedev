@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=4 uid="uid://dld3qoqpl3rmy"]
+[gd_scene load_steps=12 format=4 uid="uid://dld3qoqpl3rmy"]
 
-[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_l3xbj"]
-[ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_g8bke"]
-[ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="3_r7j6c"]
-[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="4_w0fhp"]
-[ext_resource type="PackedScene" uid="uid://c2itibsqcrugq" path="res://scenes/area_2d.tscn" id="5_00vcl"]
-[ext_resource type="Script" path="res://scenes/Spawner.gd" id="6_mtvyc"]
-[ext_resource type="PackedScene" uid="uid://bc3vlxayrdtep" path="res://scenes/NewObstacle.tscn" id="7_opk0l"]
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_7rsgr"]
+[ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_skci7"]
+[ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="3_u6wwg"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="4_hy1ib"]
+[ext_resource type="PackedScene" uid="uid://c2itibsqcrugq" path="res://scenes/area_2d.tscn" id="5_omvhj"]
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="6_e37f0"]
+[ext_resource type="PackedScene" uid="uid://bc3vlxayrdtep" path="res://scenes/NewObstacle.tscn" id="7_emalm"]
+[ext_resource type="PackedScene" uid="uid://c5y8dcopgktn2" path="res://scenes/ui/LifeCounter.tscn" id="8_i163j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttgmg"]
-texture = ExtResource("2_g8bke")
+texture = ExtResource("2_skci7")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/0 = 0
@@ -45,7 +46,7 @@ texture_region_size = Vector2i(128, 128)
 8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0kukf"]
-texture = ExtResource("3_r7j6c")
+texture = ExtResource("3_u6wwg")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
@@ -92,7 +93,7 @@ sources/1 = SubResource("TileSetAtlasSource_0kukf")
 
 [node name="Level2" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_l3xbj")]
+[node name="Player" parent="." instance=ExtResource("1_7rsgr")]
 position = Vector2(445, 209)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -104,19 +105,23 @@ tile_set = SubResource("TileSet_u50c2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2377, 406)
 scale = Vector2(0.58721, 0.665464)
-texture = ExtResource("4_w0fhp")
+texture = ExtResource("4_hy1ib")
 
-[node name="Area2D" parent="Sprite2D" instance=ExtResource("5_00vcl")]
+[node name="Area2D" parent="Sprite2D" instance=ExtResource("5_omvhj")]
 position = Vector2(-1, 0)
 scale = Vector2(14, 24)
 sceneName = "WinScreen"
 
-[node name="Area2D" parent="." instance=ExtResource("5_00vcl")]
+[node name="Area2D" parent="." instance=ExtResource("5_omvhj")]
 position = Vector2(1127, 704)
 scale = Vector2(150, 6)
-sceneName = "Level2"
+sceneName = "levels/Level2"
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(872, -255)
-script = ExtResource("6_mtvyc")
-obstacle = ExtResource("7_opk0l")
+script = ExtResource("6_e37f0")
+obstacle = ExtResource("7_emalm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("8_i163j")]

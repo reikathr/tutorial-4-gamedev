@@ -16,3 +16,20 @@ Similarly, I added a background by attaching a Sprite2D node to my Camera which 
 
 ## References
 Collision layers and masks: https://forum.godotengine.org/t/collisions-layers-masks/66193
+
+
+# Tutorial 6
+1. Main Menu<br>
+![alt text](image.png)<br>
+I made a main menu following the instructions in the tutorial. The font used is Comic Mono, a font I've been using in my code editors since I was a freshman.
+2. Life Counter<br>
+![alt text](image-1.png)<br>
+A life counter to add an extra layer of challenge for our player, once again just following the tutorial.
+3. Game Over Screen<br>
+![alt text](image-2.png)<br>
+A game over screen for when the player loses all three of its lives, as per the tutorial. For the latihan mandiri, I implemented a button that takes it back to the main menu. It's just a linkbutton that links you to the MainMenu scene.<br>
+![alt text](image-3.png)<br>
+4. Select Stage<br>
+![alt text](image-4.png)<br>
+I made a select stage page with TextureButton buttons for each level. There's a hover variant with an outline too. I simply added a TextureButton, assigned a texture for its default state and hover state, and attached a script to the button that allows it to move to the selected level.<br>
+![alt text](image-5.png)<br>

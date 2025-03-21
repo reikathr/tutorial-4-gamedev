@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5y8dcopgktn2"]
+
+[ext_resource type="Script" path="res://lives_label.gd" id="1_a4o87"]
+[ext_resource type="FontFile" uid="uid://6h1aaoktlmei" path="res://assets/ComicMono.ttf" id="1_vedm6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lj0n"]
+font = ExtResource("1_vedm6")
+font_size = 30
+
+[node name="GUI" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "tes"
+label_settings = SubResource("LabelSettings_0lj0n")
+vertical_alignment = 1
+script = ExtResource("1_a4o87")

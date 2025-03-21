@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://q077ni6nshi4"]
+
+[ext_resource type="FontFile" uid="uid://6h1aaoktlmei" path="res://assets/ComicMono.ttf" id="1_pclha"]
+[ext_resource type="Script" path="res://scripts/menu_button.gd" id="2_c5eyl"]
+[ext_resource type="Texture2D" uid="uid://dhsqj8dybb7fq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="3_buvkv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eqyt3"]
+font = ExtResource("1_pclha")
+font_size = 80
+outline_size = 5
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Alien Run"
+label_settings = SubResource("LabelSettings_eqyt3")
+
+[node name="NewGame" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pclha")
+theme_override_font_sizes/font_size = 40
+text = "New Game"
+script = ExtResource("2_c5eyl")
+scene_to_load = "levels/Level1"
+
+[node name="SelectStage" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pclha")
+theme_override_font_sizes/font_size = 40
+text = "Select Stage"
+script = ExtResource("2_c5eyl")
+scene_to_load = "ui/SelectStage"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_buvkv")
+stretch_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/NewGame" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/SelectStage" to="HBoxContainer/VBoxContainer/SelectStage" method="_on_pressed"]

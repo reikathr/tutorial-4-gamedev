@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo1gbcuhkikbc"]
+
+[ext_resource type="FontFile" uid="uid://6h1aaoktlmei" path="res://assets/ComicMono.ttf" id="1_8vobr"]
+[ext_resource type="Script" path="res://scripts/back_home.gd" id="2_2eq0j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_glqsh"]
+line_spacing = 0.0
+font = ExtResource("1_8vobr")
+font_size = 100
+
+[node name="GameOver" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.67136, 0.282915, 0.261669, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -94.0
+offset_right = 245.5
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_glqsh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="LinkButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_8vobr")
+theme_override_font_sizes/font_size = 30
+text = "Back to Home"
+script = ExtResource("2_2eq0j")
+scene_to_load = "ui/MainMenu"
+
+[connection signal="pressed" from="VBoxContainer/Label3" to="VBoxContainer/Label3" method="_on_Back_Home_pressed"]
