@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://yqmk0vpvnyxr"]
+[gd_scene load_steps=14 format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_pvx6b"]
 [ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_v1cp4"]
@@ -77,6 +77,20 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ilxym")
 sources/1 = SubResource("TileSetAtlasSource_rxxfr")
 
+[sub_resource type="CurveTexture" id="CurveTexture_e13pl"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yvqu2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(2000, 1, 1)
+spread = 20.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(-500, 500, 0)
+scale_max = 10.0
+color = Color(0.743694, 0.907052, 0.988845, 1)
+alpha_curve = SubResource("CurveTexture_e13pl")
+
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_pvx6b")]
@@ -112,3 +126,12 @@ obstacle = ExtResource("7_ru77v")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("8_16o2v")]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(30, -220)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_yvqu2")
+lifetime = 4.0
+preprocess = 80.0
+visibility_rect = Rect2(-100, -100, 2000, 500)
+trail_enabled = true
