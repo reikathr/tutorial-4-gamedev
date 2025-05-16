@@ -33,3 +33,8 @@ A game over screen for when the player loses all three of its lives, as per the 
 ![alt text](image-4.png)<br>
 I made a select stage page with TextureButton buttons for each level. There's a hover variant with an outline too. I simply added a TextureButton, assigned a texture for its default state and hover state, and attached a script to the button that allows it to move to the selected level.<br>
 ![alt text](image-5.png)<br>
+
+# Tutorial 8
+Apart from the instructions in the tutorial, I just changed the color of the rain particles in the first level and made the particles look like white snow in the second level. Also, I had to resize the trail particles (I don't think this was included in the tutorial) to around 0.3 in Scale because the original texture of the brick was much too big. 
+
+Since I used my tutorial 6 instead of using the tutorial 8 template, I adjusted my own spawner. I added @export SpawnTime : int = 2 to the spawner script (so it can be adjusted quickly from the scene if I wanted to) and I slowed down the speed of the object's (fish) fall. I found that this made playing the game feel more balanced and less frustrating because previously, it just felt like the fish fell on me out of nowhere and I had no time to dodge it. 
